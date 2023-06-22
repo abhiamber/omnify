@@ -1,12 +1,11 @@
 .forecast,
 .forecast ul {
   list-style: none;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex; */
+  /* justify-content: center; */
   padding-right: 10%;
   /* padding-top: 0px; */
-  flex-wrap: wrap;
-  text-align: left;
+  /* flex-wrap: wrap; */
 
   color: black;
 }
@@ -15,11 +14,12 @@
   padding: 8px;
   text-decoration: underline;
   font-size: 20px;
-  text-align: center;
   padding: auto;
+  /* text-align: justify; */
 }
 .container {
   padding-top: 40px;
   width: 50%;
   margin: auto;
+  text-align: center;
 }
