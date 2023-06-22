@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import DateBuilder from "./Assests/DateBuilder";
+import ForeCastData from "./Assests/ForeCastData";
+import Map from "./Components/Map";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: "auto",
+          width: "100%",
+          textAlign: "center",
+          flexDirection: "row",
+          // backgroundColor: "black",
+        }}
+      >
+        <DateBuilder />
+        <ForeCastData />
+      </div>
+
+      <Map />
     </div>
   );
 }
