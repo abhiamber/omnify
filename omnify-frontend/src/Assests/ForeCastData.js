@@ -5,6 +5,7 @@ import { FaTemperatureHigh } from "react-icons/fa";
 import { WiHumidity } from "react-icons/wi";
 import { BiWind } from "react-icons/bi";
 import { GiNightVision } from "react-icons/gi";
+import { API } from "../API";
 
 const ForeCastData = () => {
   let {
@@ -18,12 +19,13 @@ const ForeCastData = () => {
   } = WeatherState();
 
   let getWeather = async () => {
-    let response = await fetch(`http://localhost:8080/?city=${location}`);
+    console.log(location, "kkkkkkkkkkkkkkkkkkk");
+    let response = await fetch(`${API}/?city=${location}`);
     setLoading(true);
 
     try {
       let data = await response.json();
-      console.log(data);
+      // console.log(data);
 
       if (data.status === "NOTOK") {
         setLoading(false);
@@ -44,8 +46,12 @@ const ForeCastData = () => {
   };
 
   useEffect(() => {
-    getWeather();
+    if (location) {
+      getWeather();
+    }
   }, [location]);
+
+  // console.log(weatherData, "kekekekekekek");
 
   if (loadin) {
     return <h1>Loading weather data</h1>;
