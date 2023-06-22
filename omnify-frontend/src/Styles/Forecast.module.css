@@ -14,7 +14,7 @@
   padding: 8px;
   text-decoration: underline;
   font-size: 20px;
-  padding: auto;
+  /* padding: auto; */
   /* text-align: justify; */
 }
 .container {
