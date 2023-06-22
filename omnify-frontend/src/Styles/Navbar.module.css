@@ -1,7 +1,7 @@
 .main-header-container {
   background-color: blue;
   padding: 10px 0;
-  color: orange;
+  /* color: orange; */
   display: flex;
   flex-wrap: wrap;
   /* flex-direction: row; */
@@ -11,7 +11,7 @@
 .header-title-logo {
   font-size: 25px;
   padding-left: 20px;
-  color: orange;
+  color: white;
   font-weight: 700;
 }
 
@@ -35,7 +35,7 @@
   border: 0px;
   padding: 10px 15px 10px 15px;
   width: 100%;
-  background: orange;
+  /* background: orange; */
   /* width: 100%; */
 }
 .header-main-input-button button {
@@ -44,14 +44,14 @@
   cursor: pointer;
   padding-top: 4px;
   margin-left: 5px;
-  background: orange;
+  background: black;
   border: 1px;
 }
 @media all and (max-width: 768px) {
   .header-title-logo {
     font-size: 20px;
   }
-  
+
   .main-header-container {
     display: flex;
     flex-direction: column;

@@ -37,7 +37,7 @@ const Map = () => {
       <iframe
         style={{
           width: "100%",
-          height: "30vh",
+          height: "20vh",
           frameborder: "0",
           scrolling: "no",
           marginheight: "0",

@@ -19,19 +19,8 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
-ul {
-  list-style: none;
 
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-}
-li {
-  padding: 8px;
-  text-decoration: underline;
-  /* color: black; */
-  font-size: 20px;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

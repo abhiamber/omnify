@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { WeatherState } from "../Context/ContextProvider";
 import style from "../Styles/Forecast.module.css";
+import { FaTemperatureHigh } from "react-icons/fa";
+import { WiHumidity } from "react-icons/wi";
+import { BiWind } from "react-icons/bi";
+import { GiNightVision } from "react-icons/gi";
 
 const ForeCastData = () => {
   let {
@@ -48,35 +52,34 @@ const ForeCastData = () => {
   }
 
   return (
-    <div className={style.forecast}>
+    <div className={style.container}>
+      {weatherData && weatherData.main && (
+        <h2 style={{ textDecoration: "underline" }}>
+          {" "}
+          {weatherData.name}, {weatherData.sys.country}
+        </h2>
+      )}
       <ul>
         {weatherData && weatherData.main ? (
-          <div>
-            {" "}
-            {/*<img
-              src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-              alt="phot"
-            />*/}
+          <div className={style.forecast}>
             <li>
-              <p>
-                {weatherData.name}, {weatherData.sys.country}
-              </p>
-            </li>
-            <li>
-              Temperature{" "}
+              Temperature <FaTemperatureHigh />
               <span>
                 {Math.round(weatherData.main.temp)}°c (
                 {weatherData.weather[0].main})
               </span>
             </li>
             <li>
-              Humidity <span>{Math.round(weatherData.main.humidity)}%</span>
+              Humidity <WiHumidity />{" "}
+              <span>{Math.round(weatherData.main.humidity)}%</span>
             </li>
             <li>
-              Visibility <span>{Math.round(weatherData.visibility)} mi</span>
+              Visibility <GiNightVision />{" "}
+              <span>{Math.round(weatherData.visibility)} mi</span>
             </li>
             <li>
-              Wind Speed <span>{Math.round(weatherData.wind.speed)} Km/h</span>
+              Wind Speed <BiWind />{" "}
+              <span>{Math.round(weatherData.wind.speed)} Km/h</span>
             </li>
           </div>
         ) : (

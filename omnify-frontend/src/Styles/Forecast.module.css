@@ -1,18 +1,25 @@
-.forecast {
-  /* background: url("../images//images.jpg"); */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  min-height: 80vh;
-  /* background-color: rgba(230, 172, 12, 0.884); */
+.forecast,
+.forecast ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-right: 10%;
+  /* padding-top: 0px; */
+  flex-wrap: wrap;
+  text-align: left;
 
+  color: black;
+}
+
+.forecast li {
+  padding: 8px;
+  text-decoration: underline;
+  font-size: 20px;
+  text-align: center;
+  padding: auto;
+}
+.container {
+  padding-top: 40px;
   width: 50%;
-  /* width: auto; */
-  color: white;
+  margin: auto;
 }

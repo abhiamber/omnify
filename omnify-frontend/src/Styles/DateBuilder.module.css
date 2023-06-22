@@ -1,19 +1,23 @@
 .DateContainer {
-  background: url("../images/city.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  /* min-height: 50vh; */
-
   color: white;
   font-size: 25px;
   text-align: justify;
   padding-left: 20px;
+  /* text-align: /; */
   padding-top: 40px;
+  /* margin-top: 10vh; */
 }
+
+/* @media form  */
+
+/* @media (max-width: 668px) {
+  .DateContainer {
+    margin-top: 35vh;
+  }
+}
+
+@media (min-width: 668px) and (max-width: 900px) {
+  .DateContainer {
+    margin-top: 25vh;
+  }
+} */
