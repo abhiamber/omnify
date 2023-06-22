@@ -3,29 +3,36 @@ import { WeatherState } from "../Context/ContextProvider";
 import style from "../Styles/Forecast.module.css";
 
 const ForeCastData = () => {
-  let { setWeatherData, location, weatherData, setError, error } =
-    WeatherState();
+  let {
+    setWeatherData,
+    location,
+    weatherData,
+    setError,
+    error,
+    loadin,
+    setLoading,
+  } = WeatherState();
 
   let getWeather = async () => {
-    // console.log()
-    //   let url=`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&units=metric&cnt=7&appid=273f5ff95ca4ff1a00db8b01f38ae2e0`
-
-    // let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=273f5ff95ca4ff1a00db8b01f38ae2e0&units=metric`;
-
     let response = await fetch(`http://localhost:8080/?city=${location}`);
+    setLoading(true);
 
     try {
       let data = await response.json();
       console.log(data);
 
       if (data.status === "NOTOK") {
+        setLoading(false);
+
         setWeatherData();
         setError("city not found");
       } else {
         setWeatherData(data);
+        setLoading(false);
       }
     } catch (err) {
       console.log(err, "mmmmmmmmm");
+      setLoading(false);
 
       setWeatherData();
       setError("city not found");
@@ -35,6 +42,11 @@ const ForeCastData = () => {
   useEffect(() => {
     getWeather();
   }, [location]);
+
+  if (loadin) {
+    return <h1>Loading weather data</h1>;
+  }
+
   return (
     <div className={style.forecast}>
       <ul>

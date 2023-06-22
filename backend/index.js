@@ -1,10 +1,11 @@
 let express = require("express");
 let cors = require("cors");
 let axios = require("axios");
-require("dotenv").config;
+require("dotenv").config();
 let apiId = process.env.apiId;
 
 let getWeather = async (location) => {
+//   console.log(apiId, "nnnnnnnnnnn", location);
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiId}&units=metric`;
 
   let { data } = await axios.get(url);
@@ -22,7 +23,7 @@ app.use(cors());
 
 app.get("/", async (req, res) => {
   let { city } = req.query;
-  console.log(city);
+  //   console.log(city);
   try {
     let data = await getWeather(city);
 

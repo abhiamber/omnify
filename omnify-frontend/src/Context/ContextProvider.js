@@ -4,7 +4,7 @@ let globalContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   let [location, setLocation] = useState();
-  //   let [city, setCity] = u/seState("delhi");
+    let [loadin, setLoading] = useState(false);
   let [weatherData, setWeatherData] = useState();
   let [error, setError] = useState();
 
@@ -17,6 +17,8 @@ export const ContextProvider = ({ children }) => {
         setError,
         weatherData,
         setWeatherData,
+        loadin,
+        setLoading,
       }}
     >
       {children}
