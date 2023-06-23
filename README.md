@@ -3,6 +3,7 @@ This is a React application that fetches data from a Node.js backend and display
 
 # Feature
 Fetches data from a Node.js backend using HTTP GET request.
+Users Can search location to get the Weather data.
 Node JS uses axios to make http request on Weather API to collect data and send back to each request.
 render the fetched data on UI.
 Implements error handling to display a message in case of network or server errors.
